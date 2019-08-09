@@ -1,15 +1,12 @@
 package ru.amai.study.hackerrank.practice.interviewPreparationKit.warmUpChallenges.repeated
 
-
 import java.util.*
 
 fun repeatedString(str: String, charCnt: Long): Long =
     if (str.isNotEmpty()) {
         fun countA(s: String) = s.count { it == 'a' }
 
-        val fullStrCount = if (str.isNotEmpty()) {
-            charCnt / str.length
-        } else 0
+        val fullStrCount = charCnt / str.length
         val latestStrPart = (charCnt % str.length).toInt()
 
         fullStrCount*countA(str) + countA(str.take(latestStrPart))
