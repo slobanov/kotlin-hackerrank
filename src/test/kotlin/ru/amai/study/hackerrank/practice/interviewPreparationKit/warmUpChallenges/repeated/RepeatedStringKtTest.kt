@@ -1,14 +1,11 @@
 package ru.amai.study.hackerrank.practice.interviewPreparationKit.warmUpChallenges.repeated
 
-import io.mockk.every
-import io.mockk.mockkConstructor
-import io.mockk.spyk
 import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
-import java.util.*
+import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
 
 internal class RepeatedStringKtTest {
 
@@ -30,17 +27,8 @@ internal class RepeatedStringKtTest {
 
     @Test
     fun repeatedStringModuleTest() {
-        val scanner = Scanner("aba${System.lineSeparator()}10")
-        mockkConstructor(Scanner::class)
-        every {
-            anyConstructed<Scanner>().nextLine()
-        } answers { scanner.nextLine() }
-
-        val outSpy = spyk(System.out)
-        System.setOut(outSpy)
-
-        main()
-
-        verify { outSpy.println(7L) }
+        moduleTest("aba${System.lineSeparator()}10", ::main) {
+            verify { println(7L) }
+        }
     }
 }

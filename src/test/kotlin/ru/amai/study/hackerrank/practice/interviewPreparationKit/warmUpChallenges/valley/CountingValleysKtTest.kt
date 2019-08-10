@@ -1,8 +1,5 @@
 package ru.amai.study.hackerrank.practice.interviewPreparationKit.warmUpChallenges.valley
 
-import io.mockk.every
-import io.mockk.mockkConstructor
-import io.mockk.spyk
 import io.mockk.verify
 import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
@@ -11,7 +8,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.*
+import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
 
 internal class CountingValleysKtTest {
 
@@ -47,17 +44,8 @@ internal class CountingValleysKtTest {
 
     @Test
     fun countingValleysModuleTest() {
-        val scanner = Scanner("8${System.lineSeparator()}UDDDUDUU")
-        mockkConstructor(Scanner::class)
-        every {
-            anyConstructed<Scanner>().nextLine()
-        } answers { scanner.nextLine() }
-
-        val outSpy = spyk(System.out)
-        System.setOut(outSpy)
-
-        main()
-
-        verify { outSpy.println(1) }
+        moduleTest("8${System.lineSeparator()}UDDDUDUU", ::main) {
+            verify { println(1) }
+        }
     }
 }

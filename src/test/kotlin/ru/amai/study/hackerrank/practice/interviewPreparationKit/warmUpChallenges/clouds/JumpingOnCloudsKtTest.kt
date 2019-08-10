@@ -1,8 +1,5 @@
 package ru.amai.study.hackerrank.practice.interviewPreparationKit.warmUpChallenges.clouds
 
-import io.mockk.every
-import io.mockk.mockkConstructor
-import io.mockk.spyk
 import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowable
@@ -10,7 +7,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.*
+import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
 import java.util.Arrays.toString
 
 internal class JumpingOnCloudsKtTest {
@@ -56,17 +53,8 @@ internal class JumpingOnCloudsKtTest {
 
     @Test
     fun jumpingOnCloudsModuleTest() {
-        val scanner = Scanner("6${System.lineSeparator()}0 0 0 0 1 0")
-        mockkConstructor(Scanner::class)
-        every {
-            anyConstructed<Scanner>().nextLine()
-        } answers { scanner.nextLine() }
-
-        val outSpy = spyk(System.out)
-        System.setOut(outSpy)
-
-        main()
-
-        verify { outSpy.println(3) }
+        moduleTest("6${System.lineSeparator()}0 0 0 0 1 0", ::main) {
+            verify { println(3) }
+        }
     }
 }

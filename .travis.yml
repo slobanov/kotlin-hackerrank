@@ -9,4 +9,4 @@ addons:
     organization: "slobanov-github"
 
 install: true
-script: mvn clean test sonar:sonar
+script: mvn clean detekt:check test sonar:sonar
