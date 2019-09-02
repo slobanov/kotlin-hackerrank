@@ -4,7 +4,7 @@ import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
 import java.util.Arrays.toString
@@ -23,8 +23,8 @@ internal class CountInversionsKtTest {
         @Suppress("unused")
         @JvmStatic
         fun arrayProvider() = listOf(
-            Arguments.of(intArrayOf(2, 1, 5, 3, 4), 3L),
-            Arguments.of(intArrayOf(1, 2, 5, 3, 7, 8, 6, 4), 7L)
+            of(intArrayOf(2, 1, 5, 3, 4), 3L),
+            of(intArrayOf(1, 2, 5, 3, 7, 8, 6, 4), 7L)
         )
     }
 
