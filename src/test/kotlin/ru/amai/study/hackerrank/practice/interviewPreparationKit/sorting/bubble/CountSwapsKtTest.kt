@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class CountSwapsKtTest {
 
@@ -15,7 +14,7 @@ internal class CountSwapsKtTest {
     @MethodSource("arrayProvider")
     fun countSwapsTest(arr: Array<Int>, swapCnt: Int) {
         assertThat(countSwaps(arr))
-            .`as`("number of swap to sort %s using bubble sort", toString(arr))
+            .`as`("number of swap to sort %s using bubble sort", arr.contentToString())
             .isEqualTo(swapCnt)
     }
 

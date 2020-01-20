@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.Arrays.deepToString
 
 internal class FreqQueryKtTest {
 
@@ -12,7 +11,7 @@ internal class FreqQueryKtTest {
     @MethodSource("arrayProvider")
     fun freqQueryTest(queries: Array<IntArray>, result: List<Int>) {
         assertThat(freqQuery(queries))
-            .`as`("outputs of queries of type 3 for %s", deepToString(queries))
+            .`as`("outputs of queries of type 3 for %s", queries.contentDeepToString())
             .isEqualTo(result)
     }
 
@@ -40,5 +39,4 @@ internal class FreqQueryKtTest {
             ), listOf(0, 1, 1))
         )
     }
-
 }

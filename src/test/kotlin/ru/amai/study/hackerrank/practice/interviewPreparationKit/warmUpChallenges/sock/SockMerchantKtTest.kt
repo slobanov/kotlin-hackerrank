@@ -16,7 +16,7 @@ internal class SockMerchantKtTest {
     @MethodSource("socksProvider")
     fun sockMerchantTest(numberOfPairs: Int, socksColors: Array<Int>) {
         assertThat(sockMerchant(socksColors))
-            .`as`("number of matching pairs of socks for %s", Arrays.toString(socksColors))
+            .`as`("number of matching pairs of socks for %s", socksColors.contentToString())
             .isEqualTo(numberOfPairs)
     }
 
@@ -29,7 +29,7 @@ internal class SockMerchantKtTest {
             of(0, arrayOf(1)),
             of(0, arrayOf(11, 12)),
             of(1, arrayOf(1, 1)),
-            of(4, arrayOf(1,1, 3, 1, 2, 1, 3, 3, 3, 3))
+            of(4, arrayOf(1, 1, 3, 1, 2, 1, 3, 3, 3, 3))
         )
     }
 
@@ -39,5 +39,4 @@ internal class SockMerchantKtTest {
             verify { println(3) }
         }
     }
-
 }

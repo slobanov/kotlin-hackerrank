@@ -27,7 +27,7 @@ fun countSwaps(arr: Array<Int>): Int {
 fun main() {
     val scan = Scanner(System.`in`)
     scan.nextLine().trim().toInt()
-    val arr = scan.nextLine().split(" ").map{ it.trim().toInt() }.toTypedArray()
+    val arr = scan.nextLine().split(" ").map { it.trim().toInt() }.toTypedArray()
 
     println("Array is sorted in ${countSwaps(arr)} swaps.")
     println("First Element: ${arr.first()}")

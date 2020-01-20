@@ -6,7 +6,7 @@ import java.util.*
 fun arrayManipulation(n: Int, queries: Array<IntArray>): Long {
     val array = Array(n) { 0L }
     queries.forEach { (a, b, k) ->
-        array[a-1] = array[a-1] + k
+        array[a - 1] = array[a - 1] + k
         if (b < n) {
             array[b] = array[b] - k
         }
@@ -32,7 +32,7 @@ fun main() {
 
     val queries = Array(m) { IntArray(OP_SIZE) }
     for (i in 0 until m) {
-        queries[i] = scanner.nextLine().split(" ").map{ it.trim().toInt() }.toIntArray()
+        queries[i] = scanner.nextLine().split(" ").map { it.trim().toInt() }.toIntArray()
     }
 
     val result = arrayManipulation(n, queries)

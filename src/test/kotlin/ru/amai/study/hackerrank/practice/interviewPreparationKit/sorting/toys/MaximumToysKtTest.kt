@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class MaximumToysKtTest {
 
@@ -16,7 +15,7 @@ internal class MaximumToysKtTest {
     fun maximumToysTest(prices: Array<Int>, sum: Int, result: Int) {
         assertThat(maximumToys(prices, sum))
             .`as`("the maximum number of toys from %s Mark can buy for his son using %s dollars",
-                toString(prices), sum
+                prices.contentToString(), sum
             ).isEqualTo(result)
     }
 
@@ -39,5 +38,4 @@ internal class MaximumToysKtTest {
             verify { println(4) }
         }
     }
-
 }

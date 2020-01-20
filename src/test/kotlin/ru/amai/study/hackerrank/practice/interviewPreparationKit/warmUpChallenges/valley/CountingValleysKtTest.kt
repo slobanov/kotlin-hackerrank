@@ -1,7 +1,6 @@
 package ru.amai.study.hackerrank.practice.interviewPreparationKit.warmUpChallenges.valley
 
 import io.mockk.verify
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowable
 import org.junit.jupiter.api.Test
@@ -15,7 +14,7 @@ internal class CountingValleysKtTest {
     @ParameterizedTest
     @MethodSource("pathProvider")
     fun countingValleysTest(valleyCnt: Int, pathString: String) {
-        Assertions.assertThat(countingValleys(pathString))
+        assertThat(countingValleys(pathString))
             .`as`("number of valleys for $pathString")
             .isEqualTo(valleyCnt)
     }

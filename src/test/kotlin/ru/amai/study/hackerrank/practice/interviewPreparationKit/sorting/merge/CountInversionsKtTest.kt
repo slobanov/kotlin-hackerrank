@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class CountInversionsKtTest {
 
@@ -15,7 +14,7 @@ internal class CountInversionsKtTest {
     @MethodSource("arrayProvider")
     fun countInversionsTest(arr: IntArray, inversionCnt: Long) {
         assertThat(countInversions(arr))
-            .`as`("number of inversions that must be swapped to sort the %s", toString(arr))
+            .`as`("number of inversions that must be swapped to sort the %s", arr.contentToString())
             .isEqualTo(inversionCnt)
     }
 
@@ -44,5 +43,4 @@ internal class CountInversionsKtTest {
             }
         }
     }
-
 }

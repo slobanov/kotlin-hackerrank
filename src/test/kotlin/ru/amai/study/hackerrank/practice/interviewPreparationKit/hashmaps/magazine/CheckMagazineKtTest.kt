@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class CheckMagazineKtTest {
 
@@ -16,7 +15,8 @@ internal class CheckMagazineKtTest {
     fun checkMagazineTest(magazine: Array<String>, note: Array<String>, result: String) {
         assertThat(checkMagazine(magazine, note))
             .`as`("Can use the magazine  %s to create an untraceable replica of his ransom note %s?",
-                toString(magazine), toString(note))
+                magazine.contentToString(), note.contentToString()
+            )
             .isEqualTo(result)
     }
 

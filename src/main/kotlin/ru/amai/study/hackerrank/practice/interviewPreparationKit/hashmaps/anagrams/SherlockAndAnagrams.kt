@@ -3,7 +3,7 @@ package ru.amai.study.hackerrank.practice.interviewPreparationKit.hashmaps.anagr
 import java.util.*
 
 fun sherlockAndAnagrams(s: String): Int =
-    (1..s.length).sumBy{ countNSizedAnagrams(s, it) }
+    (1..s.length).sumBy { countNSizedAnagrams(s, it) }
 
 private fun countNSizedAnagrams(s: String, n: Int): Int =
     s.windowed(n)

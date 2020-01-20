@@ -18,7 +18,7 @@ internal class CountTripletsKtTest {
             .`as`(
                 "count of triplets that form a geometric progression with ratio '%s' in '%s'",
                 ratio,
-                Arrays.toString(array)
+                array.contentToString()
             ).isEqualTo(result)
     }
 

@@ -47,7 +47,7 @@ fun main() {
     val t = scan.nextLine().trim().toInt()
     for (tItr in 1..t) {
         scan.nextLine().trim().toInt()
-        val arr = scan.nextLine().split(" ").map{ it.trim().toInt() }.toIntArray()
+        val arr = scan.nextLine().split(" ").map { it.trim().toInt() }.toIntArray()
 
         val result = countInversions(arr)
         println(result)

@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class LeftRotationKtTest {
 
@@ -15,7 +14,7 @@ internal class LeftRotationKtTest {
     @MethodSource("arrProvider")
     fun rotLeftTest(arr: Array<Int>, d: Int, expectedArr: Array<Int>) {
         assertThat(rotLeft(arr, d))
-            .`as`("state of the %s after performing %s left rotations", toString(arr), d)
+            .`as`("state of the %s after performing %s left rotations", arr.contentToString(), d)
             .isEqualTo(expectedArr)
     }
 

@@ -11,9 +11,9 @@ fun activityNotifications(expenditure: IntArray, d: Int): Int {
         val median = median(counts, d)
 
         counts[expenditure[i]] += 1
-        counts[expenditure[i-d]] -= 1
+        counts[expenditure[i - d]] -= 1
 
-        (expenditure[i] >= 2*median)
+        (expenditure[i] >= 2 * median)
     }
 }
 
@@ -40,8 +40,8 @@ private fun median(counts: IntArray, size: Int): Double {
     }
 
     return when (size % 2) {
-        1 -> medianSupport(size/2)
-        else -> (medianSupport(size/2 - 1) + medianSupport(size/2)) / 2
+        1 -> medianSupport(size / 2)
+        else -> (medianSupport(size / 2 - 1) + medianSupport(size / 2)) / 2
     }
 }
 
@@ -50,7 +50,7 @@ fun main() {
 
     val nd = scan.nextLine().split(" ")
     val d = nd[1].trim().toInt()
-    val expenditure = scan.nextLine().split(" ").map{ it.trim().toInt() }.toIntArray()
+    val expenditure = scan.nextLine().split(" ").map { it.trim().toInt() }.toIntArray()
 
     val result = activityNotifications(expenditure, d)
     println(result)

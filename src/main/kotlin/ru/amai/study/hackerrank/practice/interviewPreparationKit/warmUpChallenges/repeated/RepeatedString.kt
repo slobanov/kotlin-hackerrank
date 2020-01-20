@@ -9,7 +9,7 @@ fun repeatedString(str: String, charCnt: Long): Long =
         val fullStrCount = charCnt / str.length
         val latestStrPart = (charCnt % str.length).toInt()
 
-        fullStrCount*countA(str) + countA(str.take(latestStrPart))
+        fullStrCount * countA(str) + countA(str.take(latestStrPart))
     } else 0
 
 fun main() {

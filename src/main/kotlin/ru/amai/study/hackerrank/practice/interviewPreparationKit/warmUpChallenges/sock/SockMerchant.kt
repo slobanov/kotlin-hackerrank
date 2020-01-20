@@ -7,12 +7,12 @@ fun sockMerchant(socksColors: Array<Int>): Int =
         .groupingBy { it }
         .eachCount()
         .values
-        .sumBy { sameColorCount -> sameColorCount/2 }
+        .sumBy { sameColorCount -> sameColorCount / 2 }
 
 fun main() {
     val scanner = Scanner(System.`in`)
     scanner.nextLine().trim().toInt()
-    val socksColors = scanner.nextLine().split(" ").map{ it.trim().toInt() }.toTypedArray()
+    val socksColors = scanner.nextLine().split(" ").map { it.trim().toInt() }.toTypedArray()
 
     val result = sockMerchant(socksColors)
     println(result)

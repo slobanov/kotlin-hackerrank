@@ -8,7 +8,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class JumpingOnCloudsKtTest {
 
@@ -16,7 +15,7 @@ internal class JumpingOnCloudsKtTest {
     @MethodSource("cloudProvider")
     fun jumpingOnCloudsTest(length: Int, clouds: Array<Int>) {
         assertThat(jumpingOnClouds(clouds))
-            .`as`("minimum number of jumps needed for %s", toString(clouds))
+            .`as`("minimum number of jumps needed for %s", clouds.contentToString())
             .isEqualTo(length)
     }
 
@@ -24,7 +23,7 @@ internal class JumpingOnCloudsKtTest {
     @MethodSource("badCloudProvider")
     fun jumpingOnCloudsRequireTest(expectedMsg: String, clouds: Array<Int>) {
         assertThat(catchThrowable { jumpingOnClouds(clouds) })
-            .`as`("requirement error for ${toString(clouds)}")
+            .`as`("requirement error for ${clouds.contentToString()}")
             .isInstanceOf(IllegalArgumentException::class.java)
             .hasNoCause()
             .hasMessage(expectedMsg)

@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.deepToString
 
 internal class ArrayManipulationKtTest {
 
@@ -15,7 +14,7 @@ internal class ArrayManipulationKtTest {
     @MethodSource("arrayProvider")
     fun arrayManipulationTest(n: Int, maxValue: Long, queries: Array<IntArray>) {
         assertThat(arrayManipulation(n, queries))
-            .`as`("maximum value after %s", deepToString(queries))
+            .`as`("maximum value after %s", queries.contentDeepToString())
             .isEqualTo(maxValue)
     }
 

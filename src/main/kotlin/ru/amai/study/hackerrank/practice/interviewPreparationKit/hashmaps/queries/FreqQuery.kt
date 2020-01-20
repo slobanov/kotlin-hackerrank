@@ -13,7 +13,7 @@ fun freqQuery(queries: Array<IntArray>): List<Int> {
 
     val checkResults = mutableListOf<Int>()
     fun executeQuery(query: Int, value: Int) {
-        when(query) {
+        when (query) {
             INSERT -> insert(value, valueToCnt, cntToValues)
             REMOVE -> remove(value, valueToCnt, cntToValues)
             CHECK -> {
@@ -38,7 +38,6 @@ private fun insert(value: Int, valueToCnt: MutableMap<Int, Int>, cntToValues: Mu
     }
 }
 
-
 private fun remove(value: Int, valueToCnt: MutableMap<Int, Int>, cntToValues: MutableMap<Int, MutableSet<Int>>) {
     if (value in valueToCnt) {
         val currCnt = valueToCnt.getValue(value)
@@ -61,7 +60,7 @@ fun main() {
     val queries = Array(q) { IntArray(2) { 0 } }
 
     for (i in 0 until q) {
-        queries[i] = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toIntArray()
+        queries[i] = readLine()!!.trimEnd().split(" ").map { it.toInt() }.toIntArray()
     }
 
     val ans = freqQuery(queries)

@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class ActivityNotificationsKtTest {
 
@@ -17,7 +16,7 @@ internal class ActivityNotificationsKtTest {
         assertThat(activityNotifications(expenditure, d))
             .`as`(
                 "total number of times the client receives a notification for %s with '%s' window",
-                toString(expenditure),
+                expenditure.contentToString(),
                 d
             )
             .isEqualTo(alerts)
@@ -42,5 +41,4 @@ internal class ActivityNotificationsKtTest {
             verify { println(2) }
         }
     }
-
 }

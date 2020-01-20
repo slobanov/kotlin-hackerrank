@@ -91,7 +91,7 @@ fun main() {
     val nr = scanner.nextLine().trim().split(" ")
 
     val r = nr[1].toLong()
-    val array = scanner.nextLine().trim().split(" ").map{ it.toLong() }.toLongArray()
+    val array = scanner.nextLine().trim().split(" ").map { it.toLong() }.toLongArray()
 
     val result = countTriplets(array, r)
     println(result)

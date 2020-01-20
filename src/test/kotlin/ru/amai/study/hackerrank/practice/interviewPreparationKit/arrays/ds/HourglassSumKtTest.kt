@@ -8,7 +8,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.deepToString
 
 internal class HourglassSumKtTest {
 
@@ -16,7 +15,7 @@ internal class HourglassSumKtTest {
     @MethodSource("arrProvider")
     fun hourglassSumTest(arr: Array<Array<Int>>, expectedSum: Int) {
         assertThat(hourglassSum(arr))
-            .`as`("largest hourglass sum found in %s", deepToString(arr))
+            .`as`("largest hourglass sum found in %s", arr.contentDeepToString())
             .isEqualTo(expectedSum)
     }
 
@@ -24,10 +23,10 @@ internal class HourglassSumKtTest {
     @MethodSource("badArrProvider")
     fun hourglassSumRequirementsTest(arr: Array<Array<Int>>) {
         assertThat(Assertions.catchThrowable { hourglassSum(arr) })
-            .`as`("requirement error for ${deepToString(arr)}")
+            .`as`("requirement error for ${arr.contentDeepToString()}")
             .isInstanceOf(IllegalArgumentException::class.java)
             .hasNoCause()
-            .hasMessage("arr should be 2D 6 x 6; got %s", deepToString(arr))
+            .hasMessage("arr should be 2D 6 x 6; got %s", arr.contentDeepToString())
     }
 
     companion object {
@@ -62,7 +61,7 @@ internal class HourglassSumKtTest {
                 arrayOf(0, 0, 2, 4, 4, 0)
             )),
             of(arrayOf(
-                arrayOf(1, 1, 1, 0, 0 ),
+                arrayOf(1, 1, 1, 0, 0),
                 arrayOf(0, 1, 0),
                 arrayOf(1, 1, 0)
             )),

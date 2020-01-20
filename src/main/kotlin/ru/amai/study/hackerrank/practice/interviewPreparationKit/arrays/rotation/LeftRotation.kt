@@ -16,7 +16,7 @@ fun main() {
     val scanner = Scanner(System.`in`)
     val nd = scanner.nextLine().split(" ")
     val d = nd[1].trim().toInt()
-    val arr = scanner.nextLine().split(" ").map{ it.trim().toInt() }.toTypedArray()
+    val arr = scanner.nextLine().split(" ").map { it.trim().toInt() }.toTypedArray()
 
     val result = rotLeft(arr, d)
     println(result.joinToString(" "))

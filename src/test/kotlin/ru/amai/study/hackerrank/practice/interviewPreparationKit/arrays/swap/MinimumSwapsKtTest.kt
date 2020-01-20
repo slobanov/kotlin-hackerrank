@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class MinimumSwapsKtTest {
 
@@ -15,7 +14,7 @@ internal class MinimumSwapsKtTest {
     @MethodSource("arrayProvider")
     fun minimumSwapsTest(swapCnt: Int, array: IntArray) {
         assertThat(minimumSwaps(array))
-            .`as`(" minimum number of swaps to sort %s", toString(array))
+            .`as`(" minimum number of swaps to sort %s", array.contentToString())
             .isEqualTo(swapCnt)
     }
 

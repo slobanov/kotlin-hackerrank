@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
-import java.util.Arrays.toString
 
 internal class MinimumBribesKtTest {
 
@@ -15,7 +14,7 @@ internal class MinimumBribesKtTest {
     @MethodSource("reachableQueueProvider")
     fun minimumBribesTest(result: String, queue: IntArray) {
         assertThat(minimumBribes(queue))
-            .`as`("the minimum number of bribes needed to get %s", toString(queue))
+            .`as`("the minimum number of bribes needed to get %s", queue.contentToString())
             .isEqualTo(result)
     }
 

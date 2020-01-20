@@ -11,7 +11,7 @@ fun minimumSwaps(array: IntArray): Int {
         do {
             visited += current
             cycleLength += 1
-            current = array[current]-1
+            current = array[current] - 1
         } while (current != start)
 
         return cycleLength
@@ -25,7 +25,7 @@ fun minimumSwaps(array: IntArray): Int {
 fun main() {
     val scanner = Scanner(System.`in`)
     scanner.nextLine().trim().toInt()
-    val array = scanner.nextLine().split(" ").map{ it.trim().toInt() }.toIntArray()
+    val array = scanner.nextLine().split(" ").map { it.trim().toInt() }.toIntArray()
 
     val res = minimumSwaps(array)
     println(res)

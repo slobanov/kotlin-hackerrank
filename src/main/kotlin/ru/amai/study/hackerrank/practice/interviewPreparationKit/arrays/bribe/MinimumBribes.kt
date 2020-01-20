@@ -4,7 +4,7 @@ import ru.amai.study.hackerrank.practice.interviewPreparationKit.sorting.merge.m
 import java.util.*
 
 fun minimumBribes(queue: IntArray): String =
-    if (queue.withIndex().any { (indx, elem) -> (elem - (indx + 1)) > 2}) {
+    if (queue.withIndex().any { (indx, elem) -> (elem - (indx + 1)) > 2 }) {
         "Too chaotic"
     } else {
         mergeSort(queue).toString()
@@ -20,7 +20,7 @@ fun main() {
 
     for (tItr in 1..casesCnt) {
         scanner.nextLine().trim().toInt()
-        val queue = scanner.nextLine().split(" ").map{ it.trim().toInt() }.toIntArray()
+        val queue = scanner.nextLine().split(" ").map { it.trim().toInt() }.toIntArray()
 
         println(minimumBribes(queue))
     }
