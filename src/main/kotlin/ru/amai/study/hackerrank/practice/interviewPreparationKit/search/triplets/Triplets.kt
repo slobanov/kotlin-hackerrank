@@ -4,32 +4,32 @@ import java.util.*
 
 fun triplets(a: IntArray, b: IntArray, c: IntArray): Long {
 
-    val (sortedA, aSize) = sortUniqueToSize(a)
-    val (sortedB, bSize) = sortUniqueToSize(b)
-    val (sortedC, cSize) = sortUniqueToSize(c)
+    val (aSorted, aSize) = sortUniqueToSize(a)
+    val (bSorted, bSize) = sortUniqueToSize(b)
+    val (cSorted, cSize) = sortUniqueToSize(c)
 
     val totalSize = aSize + bSize + cSize
 
-    var ai = 0
-    var bi = 0
-    var ci = 0
+    var aIndex = 0
+    var bIndex = 0
+    var cIndex = 0
 
     var tripletsCnt = 0L
 
-    while ((ai + bi + ci) < totalSize) {
+    while ((aIndex + bIndex + cIndex) < totalSize) {
 
-        if (bi == bSize) break
+        if (bIndex == bSize) break
 
-        val p = sortedA.getOrMaxValue(ai)
-        val q = sortedB.getOrMaxValue(bi)
-        val r = sortedC.getOrMaxValue(ci)
+        val p = aSorted.getOrMaxValue(aIndex)
+        val q = bSorted.getOrMaxValue(bIndex)
+        val r = cSorted.getOrMaxValue(cIndex)
 
         when {
-            (p <= q) && (p <= r) -> ai++
-            (r <= q) && (r <= p) -> ci++
+            (p <= q) && (p <= r) -> aIndex++
+            (r <= q) && (r <= p) -> cIndex++
             else -> {
-                bi++
-                tripletsCnt += ai.toLong() * ci.toLong()
+                bIndex++
+                tripletsCnt += aIndex.toLong() * cIndex.toLong()
             }
         }
     }
