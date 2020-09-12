@@ -3,8 +3,6 @@ package ru.amai.study.hackerrank.practice.interviewPreparationKit.search.candies
 import io.mockk.verify
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import ru.amai.study.hackerrank.practice.interviewPreparationKit.moduleTest
